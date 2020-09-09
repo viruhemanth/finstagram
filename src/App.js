@@ -22,7 +22,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/explore" component={Explore} />
-        <Route exact path="/:username" component={ProfilePage} />
+        <Route path="/:username" component={ProfilePage} />
         <Route path="/accounts/edit" component={EditProfile} />
         <Route path="*" component={NotFound} />
       </Switch>
