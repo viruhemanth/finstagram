@@ -145,6 +145,18 @@ function Navbar() {
     setTooltip(false);
   }, [showTooltip]);
 
+  function checkNavbar() {
+    path.includes('login') ? setHideNavbar(true) : path.includes('signup') ? setHideNavbar(true) : setHideNavbar(false)
+  }
+  
+  React.useEffect(() => {
+    checkNavbar()
+  })
+
+  
+
+  
+
   return hideNavbar ? null : (
     <AppBar className={classes.appBar}>
       <Link to="/">
