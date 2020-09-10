@@ -2,7 +2,6 @@ import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-import iconSheet from "../images/icon-sheet-2.png";
 import { CommentIcon, LikeActiveIcon } from "../icons";
 
 const useExploreGridItemStyles = makeStyles((theme) => ({
@@ -49,11 +48,6 @@ const useExploreGridItemStyles = makeStyles((theme) => ({
 function ExploreGridItem() {
   const classes = useExploreGridItemStyles();
   return (
-    /*
-        Main Grid Square box
-        Rectangle Grid box flex dir row
-        2 rectangle grid box with icon and value flex dir row
-       */
     <Grid container item direction="row" className={classes.main}>
       <Grid className={classes.gridPostOverlay}>
         <Grid
