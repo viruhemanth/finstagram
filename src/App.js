@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, BrowserRouter as Router, Redirect } from "react-router-dom";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 
 import Navbar from "./shared/Navbar";
 import NotFound from "./pages/not-found";
@@ -22,7 +22,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/explore" component={Explore} />
-        <Route path="/:username" component={ProfilePage} />
+        <Route exact path="/:username" component={ProfilePage} />
         <Route exact path="/accounts/edit" component={EditProfile} />
         <Route path="*" component={NotFound} />
       </Switch>
