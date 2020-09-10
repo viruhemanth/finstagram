@@ -34,11 +34,8 @@ const useProfileStyles = makeStyles((theme) => ({
     fontSize: "10px",
     width: "100%",
     marginTop: "10em",
-    // backgroundColor: "chocolate",
   },
   image: {
-    // width: (props) => (props.size === "big" ? "15em" : "15em"),
-    // height: (props) => (props.size === "big" ? "7.5em" : "7.5em"),
     width: "150px",
     height: "150px",
     borderRadius: "50%",
@@ -64,7 +61,7 @@ const useProfileStyles = makeStyles((theme) => ({
     fontWeight: 600,
     color: "#262626",
     fontSize: "1.6em",
-    // marginLeft: "0.5em",
+
   },
   category: {
     marginLeft: "4px",
