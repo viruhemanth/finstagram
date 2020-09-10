@@ -19,9 +19,9 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Feed} />
+        <Route path="/explore" component={Explore} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
-        <Route path="/explore" component={Explore} />
         <Route exact path="/:username" component={ProfilePage} />
         <Route exact path="/accounts/edit" component={EditProfile} />
         <Route path="*" component={NotFound} />
