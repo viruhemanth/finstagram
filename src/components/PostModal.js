@@ -34,11 +34,12 @@ const usePostModalStyles = makeStyles((theme) => ({
 function PostModal() {
   const classes = usePostModalStyles();
   const history = useHistory();
+  const [openModal, setModal] = React.useState(true);
 
   return (
     <Grid className={classes.container}>
       <Modal
-        isOpen
+        isOpen={openModal}
         ariaHideApp={false}
         overlayClassName={classes.overlay}
         onRequestClose={() => history.goBack()}
@@ -64,7 +65,7 @@ function PostModal() {
         <Post modal />
       </Modal>
       <div className={classes.close}>
-        <CloseIcon />
+        <CloseIcon onClick={() => setModal(false)} />
       </div>
     </Grid>
   );
