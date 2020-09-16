@@ -10,6 +10,7 @@ import {
   Divider,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 import { getDefaultUser } from "../data";
 import { GearIcon } from "../icons";
 import ProfileTabs from "../components/ProfileTabs";
@@ -61,7 +62,6 @@ const useProfileStyles = makeStyles((theme) => ({
     fontWeight: 600,
     color: "#262626",
     fontSize: "1.6em",
-
   },
   category: {
     marginLeft: "4px",
@@ -92,7 +92,9 @@ function ProfilePage() {
                   </Typography>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined">Edit Profile</Button>
+                  <Link style={{ textDecoration: "none" }} to="/accounts/edit">
+                    <Button variant="outlined">Edit Profile</Button>
+                  </Link>
                 </Grid>
                 <Grid item>
                   <GearIcon />

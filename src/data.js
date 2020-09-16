@@ -5,8 +5,7 @@ export const defaultUser = {
   username: "username",
   name: "name",
   profile_image:
-    "https://instagram.fhyd8-1.fna.fbcdn.net/v/t51.2885-19/s150x150/93772094_2540986786216388_8926699756453888000_n.jpg?_nc_ht=instagram.fhyd8-1.fna.fbcdn.net&_nc_ohc=5Hru8w2WXeIAX_svcBu&oh=746f6f908aa0bd9ea0c9b094b7a84261&oe=5F57BCF1", // profile_image:
-  // "https://instagram.com/static/images/anonymousUser.jpg/23e7b3b2a737.jpg"
+    "https://res.cloudinary.com/hkodes/image/upload/v1599814643/MV5BZmMzZTkxMmQtNzQ3YS00ZmZiLTg3MWMtYTlmMGY5ODMzYzhmXkEyXkFqcGdeQXVyNTU1MDU0MjM_1.png",
 };
 
 export function getDefaultUser() {
@@ -22,7 +21,7 @@ export function getDefaultUser() {
 export const defaultPost = {
   id: uuid(),
   likes: 10,
-  caption: `<span class="">Do you know the 10 JavaScript concepts you need to learn React? 🤔⚛️👇<br>•<br>•<br>👉 Get the FREE cheatsheet to learn them now: bit.ly/10-js-tips 🔥</span>`,
+  caption: `<span class=""> Get the FREE cheatsheet to learn them now: bit.ly/10-js-tips   Get the FREE cheatsheet to learn them now: bit.ly/10-js-tips   Get the FREE cheatsheet to learn them now: bit.ly/10-js-tips  Do you know the 10 JavaScript concepts you need to learn React? 🤔⚛️👇<br>•<br>•<br>👉 Get the FREE cheatsheet to learn them now: bit.ly/10-js-tips 🔥 Do you know the 10 JavaScript concepts you need to learn React? 🤔⚛️👇<br>•<br>•<br>👉 Get the FREE cheatsheet to learn them now: bit.ly/10-js-tips 🔥 Get the FREE cheatsheet to learn them now: bit.ly/10-js-tips Get the FREE cheatsheet to learn them now: bit.ly/10-js-tips</span>`,
   user: defaultUser,
   media: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
   comments: [

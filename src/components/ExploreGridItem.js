@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { useHistory } from "react-router-dom";
 
 import { CommentIcon, LikeActiveIcon } from "../icons";
 
@@ -47,8 +48,24 @@ const useExploreGridItemStyles = makeStyles((theme) => ({
 
 function ExploreGridItem() {
   const classes = useExploreGridItemStyles();
+  const history = useHistory();
+  function handleOpenPostModal() {
+    history.push({
+      pathname: `/p/13434`,
+      state: {
+        modal: true,
+      },
+    });
+  }
   return (
-    <Grid container item direction="row" className={classes.main}>
+    <Grid
+      component="div"
+      onClick={handleOpenPostModal}
+      container
+      item
+      direction="row"
+      className={classes.main}
+    >
       <Grid className={classes.gridPostOverlay}>
         <Grid
           container

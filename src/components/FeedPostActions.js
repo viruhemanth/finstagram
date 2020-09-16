@@ -8,6 +8,7 @@ const useFeedPostActionStyles = makeStyles((theme) => ({
   container: {
     height: "4em",
     width: "100%",
+    position: "relative",
   },
   iconStyle: {
     marginLeft: "1.5em",

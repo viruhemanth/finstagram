@@ -31,6 +31,7 @@ const useFeedPostStyles = makeStyles((theme) => ({
     minWidth: "60em",
     position: "relative",
     left: "5em",
+    maxWidth: "60em",
   },
   cardHeader: {
     padding: "0.5em",
