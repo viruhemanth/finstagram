@@ -28,13 +28,13 @@ export const defaultPost = {
     {
       user: {
         username: "Mr Reese",
-        content: "Shitman posted something related to shit",
+        content: "Get the FREE cheatsheet to learn them now",
       },
     },
     {
       user: {
         username: "Mr Reese",
-        content: "Hiy posted something related to shit",
+        content: "Hiy posted something",
       },
     },
   ],

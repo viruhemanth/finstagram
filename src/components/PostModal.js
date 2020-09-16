@@ -7,6 +7,9 @@ import { CloseIcon } from "../icons";
 import Post from "./Post";
 
 const usePostModalStyles = makeStyles((theme) => ({
+  container: {
+    fontSize: "10px",
+  },
   overlay: {
     position: "fixed !important",
     top: 0,
@@ -33,7 +36,7 @@ function PostModal() {
   const history = useHistory();
 
   return (
-    <Grid>
+    <Grid className={classes.container}>
       <Modal
         isOpen
         ariaHideApp={false}
@@ -43,8 +46,9 @@ function PostModal() {
           content: {
             display: "flex",
             alignItems: "center",
-            maxWidth: 935,
-            width: "100%",
+            maxWidth: "935px",
+            minWidth: "935px",
+            height: "600px",
             top: "50%",
             left: "50%",
             right: "auto",
@@ -57,7 +61,7 @@ function PostModal() {
           },
         }}
       >
-        <Post />
+        <Post modal />
       </Modal>
       <div className={classes.close}>
         <CloseIcon />

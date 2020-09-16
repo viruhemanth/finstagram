@@ -119,11 +119,6 @@ function Sidebar(props) {
         <UserCard sideSuggestion feed={props.feed} />
         <UserCard sideSuggestion feed={props.feed} />
       </Grid>
-      <Grid container item direction="row">
-        <Link to="/" className={classes.link}>
-          <Typography variant="body2">Something</Typography>
-        </Link>
-      </Grid>
     </Grid>
   );
 }

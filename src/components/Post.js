@@ -10,7 +10,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import UserCard from "../shared/UserCard";
-import { defaultPost, defaultUser } from "../data";
+import { defaultPost } from "../data";
 import FeedPostActions from "./FeedPostActions";
 
 const usePostStyles = makeStyles((theme) => ({
@@ -35,10 +35,13 @@ const usePostStyles = makeStyles((theme) => ({
   },
   postHead: {
     padding: 10,
+    borderTop: "0.5px solid #0000001F",
   },
   postBody: {
-    maxHeight: "38em",
-    overflow: "scroll",
+    minHeight: (props) => (props.modal ? "358px" : "380px !important"),
+    maxHeight: (props) => (props.modal ? "358px" : "380px !important"),
+    overflow: "scroll !important",
+    scrollbarWidth: "none",
     margin: 0,
     padding: "1em",
     "&::-webkit-scrollbar": {
@@ -59,7 +62,6 @@ const usePostStyles = makeStyles((theme) => ({
     position: "relative",
   },
   addComment: {
-    // fontSize: "1.4em",
     marginLeft: "2em",
   },
   commentPostButton: {
@@ -73,7 +75,7 @@ const usePostStyles = makeStyles((theme) => ({
   },
 }));
 
-function Post() {
+function Post({ modal }) {
   const classes = usePostStyles();
   return (
     <Grid container direction="row" className={classes.PostImage}>
@@ -91,7 +93,7 @@ function Post() {
           </Grid>
           <Divider />
           <Grid item className={classes.postHead} style={{ maxWidth: "325px" }}>
-            <PostBody />
+            <PostBody modal={modal} />
           </Grid>
           <Divider />
           <Grid item style={{ width: "100%" }}>
@@ -132,8 +134,8 @@ function Post() {
   );
 }
 
-function PostBody() {
-  const classes = usePostStyles();
+function PostBody({ modal }) {
+  const classes = usePostStyles({ modal });
   return (
     <Grid
       wrap="nowrap"
@@ -149,7 +151,7 @@ function PostBody() {
       </Grid>
       <Grid item>
         <Link
-          style={{ fontSize: "1.4em", fontWeight: 600 }}
+          style={{ fontSize: "14px", fontWeight: 600 }}
           className={classes.link}
           to={`/${defaultPost.user.username}`}
         >
