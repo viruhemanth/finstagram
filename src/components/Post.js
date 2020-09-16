@@ -84,6 +84,7 @@ function Post({ modal }) {
         <img
           src="https://images.unsplash.com/photo-1566052907859-652cb43a9fee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=674&q=80"
           style={{ height: "100%", width: "100%" }}
+          alt="post"
         />
       </Grid>
       <Grid item className={classes.PostDetails}>
