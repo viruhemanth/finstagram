@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useHistory, Link } from "react-router-dom";
 import {
   Grid,
   Card,
@@ -11,10 +12,10 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { Link } from "react-router-dom";
 import InstaLogo from "../images/logo.png";
 import FacebookIconBlue from "../images/facebook-icon-blue.svg";
 import SEO from "../shared/Seo";
+import { AuthContext } from "../auth";
 
 const useLoginStyles = makeStyles((theme) => ({
   loginContainer: {
@@ -49,6 +50,8 @@ const useLoginStyles = makeStyles((theme) => ({
 
 function Login() {
   const classes = useLoginStyles();
+  const { demoLogin } = useContext(AuthContext);
+  const history = useHistory();
   return (
     <Grid className={classes.loginContainer} container>
       <SEO title="Login" />
@@ -67,6 +70,7 @@ function Login() {
                 variant="filled"
                 fullWidth
                 label="username"
+                value="demo"
               />
               <TextField
                 className={classes.textField}
@@ -76,6 +80,7 @@ function Login() {
                 variant="filled"
                 fullWidth
                 label="password"
+                value="demo"
               />
               <Button
                 variant="contained"
@@ -83,6 +88,10 @@ function Login() {
                 color="primary"
                 type="submit"
                 className={classes.button}
+                onClick={() => {
+                  demoLogin();
+                  history.push("/");
+                }}
               >
                 Login
               </Button>

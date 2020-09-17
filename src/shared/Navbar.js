@@ -6,6 +6,7 @@ import {
   Box,
   Tooltip,
   Zoom,
+  Avatar,
 } from "@material-ui/core";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { Search } from "@material-ui/icons";
@@ -23,8 +24,9 @@ import {
 } from "../icons";
 import UserCard from "./UserCard";
 import NotificationTooltip from "../components/NotificationTooltip";
-import { defaultNotifications } from "../data";
+import { defaultNotifications, defaultUser } from "../data";
 import NotificationList from "../components/NotificationList";
+import ProfileTooltip from "../components/ProfileTooltip";
 
 const useNavbarStyles = makeStyles((theme) => ({
   appBar: {
@@ -92,7 +94,7 @@ const useNavbarStyles = makeStyles((theme) => ({
 
 const WhiteTooltip = withStyles((theme) => ({
   tooltip: {
-    backgroundColor: "#f5f5f9",
+    backgroundColor: "#FFFFFF",
     color: "rgba(0, 0, 0, 0.87)",
     maxWidth: 500,
     maxHeight: 362,
@@ -119,6 +121,7 @@ function Navbar() {
   const [hideNavbar, setHideNavbar] = React.useState(false);
   const [showTooltip, setTooltip] = React.useState(false);
   const [showList, setList] = React.useState(false);
+  const [ProfileList, setProfileList] = React.useState(false);
   const [openNotifications, setOpenNotifications] = React.useState(false);
 
   const history = useHistory();
@@ -133,6 +136,13 @@ function Navbar() {
     setList((prevState) => !prevState);
   };
 
+  const openProfileList = () => {
+    setProfileList((prevState) => !prevState);
+  };
+
+  const closeProfileList = () => {
+    setProfileList(false);
+  };
   const hideList = () => {
     setList(false);
   };
@@ -146,16 +156,16 @@ function Navbar() {
   }, [showTooltip]);
 
   function checkNavbar() {
-    path.includes('login') ? setHideNavbar(true) : path.includes('signup') ? setHideNavbar(true) : setHideNavbar(false)
+    path.includes("login")
+      ? setHideNavbar(true)
+      : path.includes("signup")
+      ? setHideNavbar(true)
+      : setHideNavbar(false);
   }
-  
+
   React.useEffect(() => {
-    checkNavbar()
-  })
-
-  
-
-  
+    checkNavbar();
+  });
 
   return hideNavbar ? null : (
     <AppBar className={classes.appBar}>
@@ -206,6 +216,31 @@ function Navbar() {
             )}
           </div>
         </RedTooltip>
+        <WhiteTooltip
+          arrow
+          title={<ProfileTooltip />}
+          open={ProfileList}
+          TransitionComponent={Zoom}
+          onClose={closeProfileList}
+          interactive
+          disableFocusListener
+          disableHoverListener
+          disableTouchListener
+        >
+          <Avatar
+            style={{
+              height: "24px",
+              width: "24px",
+              marginLeft: "0.5em",
+              marginTop: "-2px",
+            }}
+            onClick={openProfileList}
+          >
+            <Link>
+              <img src={defaultUser.profile_image} alt="user" />
+            </Link>
+          </Avatar>
+        </WhiteTooltip>
       </Box>
     </AppBar>
   );

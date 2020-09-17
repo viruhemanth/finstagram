@@ -1,5 +1,11 @@
 import React from "react";
-import { Switch, Route, useHistory, useLocation } from "react-router-dom";
+import {
+  Switch,
+  Route,
+  useHistory,
+  useLocation,
+  Redirect,
+} from "react-router-dom";
 
 import Navbar from "./shared/Navbar";
 import NotFound from "./pages/not-found";
@@ -30,6 +36,16 @@ function App() {
   }, [location, modal, history.action]);
 
   const isModalOpen = modal && previousLocation.current !== location;
+
+  if (authState.status === "out") {
+    return (
+      <Switch>
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+        <Redirect to="/login" component={Login} />
+      </Switch>
+    );
+  }
 
   return (
     <>

@@ -56,6 +56,14 @@ export default function AuthProvider({ children }) {
     });
   }, []);
 
+  const demoLogin = () => {
+    setAuthState({ status: "in" });
+  };
+
+  const demoLogout = () => {
+    setAuthState({ status: "out" });
+  };
+
   const signInWithGoogle = async () => {
     try {
       await firebase.auth().signInWithPopup(provider);
@@ -105,6 +113,8 @@ export default function AuthProvider({ children }) {
           signOut,
           authState,
           signUpWithEmailAndPassword,
+          demoLogin,
+          demoLogout,
         }}
       >
         {children}
