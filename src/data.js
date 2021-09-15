@@ -76,7 +76,7 @@ export const defaultCurrentUser = {
   name: "myself",
   profile_image:
     "https://instagram.fhyd8-1.fna.fbcdn.net/v/t51.2885-19/s150x150/93772094_2540986786216388_8926699756453888000_n.jpg?_nc_ht=instagram.fhyd8-1.fna.fbcdn.net&_nc_ohc=5Hru8w2WXeIAX_svcBu&oh=746f6f908aa0bd9ea0c9b094b7a84261&oe=5F57BCF1",
-  website: "https://react12.io",
+  website: "https://finstagram-sigma.vercel.app/",
   email: "me@gmail.com",
   bio: "This is my bio",
   phone_number: "555-555-5555",
